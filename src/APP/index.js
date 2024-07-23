@@ -1,12 +1,20 @@
 import './App.css';
+import { Title } from '../Components/Title';
+import {NotesGrid} from '../Components/NotesGrid'
+import {Note} from '../Components/Note'
+import { AddNoteButton } from '../Components/AddNoteButton';
+
 
 function App() {
   return (
     <div className="App">
-        <p>
-          Creating a Notes-app
-        </p>
-
+        <Title/>
+        <NotesGrid>
+          <Note/>
+          <Note/>
+          <Note/>
+        </NotesGrid>
+        <AddNoteButton/>
     </div>
   );
 }

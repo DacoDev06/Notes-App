@@ -1,0 +1,19 @@
+.notesContainer{
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: 130px;
+    gap: 5px;
+}
+
+
+@media (min-width: 768px) {
+    .notesContainer{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media (min-width:1000px) {
+    .notesContainer{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
