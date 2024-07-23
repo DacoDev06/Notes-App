@@ -1,14 +1,14 @@
 .addNoteButton{
-    width: 90%;
+    width: 95%;
     height: 56px;
-    background-color: var(--hospital-green);
+    background-color: var(--blue);
     position: absolute;
     bottom: 5px;
     border-radius: 20px;
     border: none;
 
     /* items */
-    color: rgb(253, 253, 253);
+    color: var(--hospital-green);
     font-size: 50px;
 
     display: grid;

@@ -1,3 +1,38 @@
 .note{
+    background-color: var(--violet);
+    display: grid;
+    color: var(--aqua-blue);
+    grid-template-rows: auto 1fr;
+    position: relative;
+}   
+
+.note-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 15px;
+    gap: 4px;
+    border-bottom: 1px solid rgb(0,0,0, .3);
+}
+.note-info-title{
+    margin: 0;
+    text-align: start;
+}
+.note-description{
+    font-size: 10px;
+    padding: 5px;
+    text-align: start;
+    color: var(--yellow);
+}
+.note-button-container{
+    position: relative;
+}
+.note-delete{
+    position: absolute;
+    right: 8px;
+    font-size: 20px;
+    bottom: 5px;
+    cursor: pointer;
     
 }

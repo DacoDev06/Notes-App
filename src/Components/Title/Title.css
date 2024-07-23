@@ -1,5 +1,13 @@
 .title{
-    text-align: center;
-    color: var(--black);
-  }
+  margin: 20px;
+  align-self: left;
+  color: var(--violet);
+  font-size: 25px;
+  align-self: left;
+}
+.title-notes{
+    color: var(--blue);
+    margin: 0;
+}
+
 
