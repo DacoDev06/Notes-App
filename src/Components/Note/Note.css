@@ -4,13 +4,17 @@
     color: var(--hospital-green);
     grid-template-rows: auto 1fr;
     position: relative;
-}   
+}
+.note-icon{
+    cursor: pointer;
+    color: white;
+}  
 
 .note-info{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
+    padding: 5px 10px 5px 5px;
     font-size: 15px;
     gap: 4px;
     background-color: var(--blue);
@@ -20,23 +24,63 @@
     margin: 0;
     text-align: start;
 }
-.note-edit{
-    cursor: pointer;
+
+.note-info-icons{
+    width: 35px;
+    display: flex;
+    justify-content: space-between;
 }
+.note-complete{
+    font-size: 16px;
+}
+.note-complete:hover{
+    color: #55FF00;
+}
+.note-complete:active{
+    color: #419716;
+}
+.note-edit:hover{
+    color: yellow;
+}
+.note-edit:active{
+    color: #9DC000;
+}
+
 .note-description{
     font-size: 10px;
     padding: 5px;
     text-align: start;
     color: var(--yellow);
 }
+.completedP{
+    display: none;
+    color: #55FF00;
+}
+/* When is Note Completed */
+.note-info-title--completed,.note-description--completed{
+    color: #A5A5A5;
+    text-decoration: line-through;
+}
+.note-complete--completed{
+    color: #9DC000;
+}.completedP--completed{
+    display: block;
+    margin: 0px 0px 5px 0px;
+}z
+
 .note-button-container{
     position: relative;
 }
 .note-delete{
     position: absolute;
-    right: 8px;
-    font-size: 20px;
-    bottom: 5px;
-    cursor: pointer;
-    
+    right: -10px;
+    top: -14px;
+    font-size: 18px;
+    color: #A5A5A5;
+}
+.note-delete:hover{
+    color: red;
+}
+.note-delete:active{
+    color: #A20000;
 }

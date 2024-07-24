@@ -8,7 +8,7 @@ import React from 'react';
 const notesList = [
   {id:1,title:"Nota 1",desciption:"texto cualquiera para la descripcion",color:"blue",isCompleted:false},
   {id:2,title:"Nota 2",desciption:"Algun que hacer en nuestra hija",color:"white",isCompleted:false},
-  {id:3,title:"Nota 3",desciption:"texto cualquiera para la descripcion",color:"black",isCompleted:false},
+  {id:3,title:"Nota 3",desciption:"texto cualquiera para la descripcion",color:"black",isCompleted:true},
   {id:4,title:"Nota 3",desciption:"texto cualquiera para la descripcion",color:"red",isCompleted:false},
 ]
 
@@ -19,6 +19,20 @@ function App() {
   const saveNotes = (newNotes)=>{
     setNotes(newNotes)
     localStorage.setItem('notes',JSON.stringify(newNotes))
+  }
+
+  const changeState = (id)=>{
+    let newNotes = [...notes]
+    newNotes.forEach(note => {
+      if(note.id === id){
+        if(note.isCompleted){
+          note.isCompleted = false
+        }else{
+          note.isCompleted = true
+        }
+      }
+    })
+    saveNotes(newNotes)
   }
 
 
@@ -39,8 +53,10 @@ function App() {
               key={note.id}
               title={note.title}
               description={note.desciption}
+              changeState={()=>changeState(note.id)}
               deleteNotes={()=>deleteNotes(note.id)}
               color={note.color}
+              isCompleted={note.isCompleted}
             />
            )}
         </NotesGrid>
