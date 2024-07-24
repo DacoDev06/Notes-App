@@ -1,10 +1,13 @@
+import React from 'react';
 import './App.css';
 import { Title } from '../Components/Title';
 import {NotesGrid} from '../Components/NotesGrid'
 import {Note} from '../Components/Note'
 import { AddNoteButton } from '../Components/AddNoteButton';
-import React from 'react';
 
+import { useLocalStorage } from '../Hooks/LocalStorage/useLocalStorage';
+
+// eslint-disable-next-line
 const notesList = [
   {id:1,title:"Nota 1",desciption:"texto cualquiera para la descripcion",color:"blue",isCompleted:false},
   {id:2,title:"Nota 2",desciption:"Algun que hacer en nuestra hija",color:"white",isCompleted:false},
@@ -13,14 +16,10 @@ const notesList = [
 ]
 
 function App() {
-  const [notes,setNotes] = React.useState(notesList)
-  // const [notes,setNotes] = React.useState(JSON.parse(localStorage.getItem('notes'))||[])
-
-  const saveNotes = (newNotes)=>{
-    setNotes(newNotes)
-    localStorage.setItem('notes',JSON.stringify(newNotes))
-  }
-
+  const {item:notes,
+    saveItem:saveNotes
+  } = useLocalStorage("notes")
+  
   const changeState = (id)=>{
     let newNotes = [...notes]
     newNotes.forEach(note => {

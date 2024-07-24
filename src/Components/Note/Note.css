@@ -63,7 +63,11 @@
 }
 .note-complete--completed{
     color: #9DC000;
-}.completedP--completed{
+}
+.note-complete--completed:active{
+    color: red;
+}
+.completedP--completed{
     display: block;
     margin: 0px 0px 5px 0px;
 }z
