@@ -6,7 +6,7 @@
     bottom: 5px;
     border-radius: 20px;
     border: none;
-
+    cursor: pointer;
     /* items */
     color: var(--hospital-green);
     font-size: 50px;
