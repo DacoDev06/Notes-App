@@ -1,10 +1,15 @@
+import React from 'react';
 import { Title } from '../Components/Title';
 import {NotesGrid} from '../Components/NotesGrid'
 import {Note} from '../Components/Note'
 import { AddNoteButton } from '../Components/AddNoteButton';
+import {AppContext} from '../Context'
 
 
-function AppUI({notes,changeState,deleteNotes}){
+function AppUI(){
+    const {notes,
+        changeState,
+        deleteNotes} = React.useContext(AppContext)
     return(
         <div className="App">
             <Title/>

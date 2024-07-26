@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
 import {AppUI} from './AppUI'
-
-
-import { useLocalStorage } from '../Hooks/LocalStorage/useLocalStorage';
+import { AppContextProvider } from '../Context';
 
 // eslint-disable-next-line
 const notesList = [
@@ -14,40 +12,13 @@ const notesList = [
 ]
 
 function App() {
-  const {
-    item:notes,
-    saveItem:saveNotes
-  } = useLocalStorage("notes")
   
-  const changeState = (id)=>{
-    let newNotes = [...notes]
-    newNotes.forEach(note => {
-      if(note.id === id){
-        if(note.isCompleted){
-          note.isCompleted = false
-        }else{
-          note.isCompleted = true
-        }
-      }
-    })
-    saveNotes(newNotes)
-  }
-
-
-  const deleteNotes = (id)=>{
-    let newNotes = [...notes]
-    const index = newNotes.findIndex(note => note.id === id)
-    newNotes.splice(index,1)
-    saveNotes(newNotes)
-  }
 
 
   return (
-    <AppUI
-    notes={notes}
-    changeState={changeState}
-    deleteNotes={deleteNotes}
-    />
+    <AppContextProvider>
+      <AppUI/>
+    </AppContextProvider>
   );
 }
 
