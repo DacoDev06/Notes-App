@@ -16,7 +16,8 @@ const notesList = [
 ]
 
 function App() {
-  const {item:notes,
+  const {
+    item:notes,
     saveItem:saveNotes
   } = useLocalStorage("notes")
   
