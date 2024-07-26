@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Title } from '../Components/Title';
-import {NotesGrid} from '../Components/NotesGrid'
-import {Note} from '../Components/Note'
-import { AddNoteButton } from '../Components/AddNoteButton';
+import {AppUI} from './AppUI'
+
 
 import { useLocalStorage } from '../Hooks/LocalStorage/useLocalStorage';
 
@@ -45,23 +43,11 @@ function App() {
 
 
   return (
-    <div className="App">
-        <Title/>
-        <NotesGrid>
-          {notes.map(note=>
-            <Note
-              key={note.id}
-              title={note.title}
-              description={note.desciption}
-              changeState={()=>changeState(note.id)}
-              deleteNotes={()=>deleteNotes(note.id)}
-              color={note.color}
-              isCompleted={note.isCompleted}
-            />
-           )}
-        </NotesGrid>
-        <AddNoteButton/>
-    </div>
+    <AppUI
+    notes={notes}
+    changeState={changeState}
+    deleteNotes={deleteNotes}
+    />
   );
 }
 
