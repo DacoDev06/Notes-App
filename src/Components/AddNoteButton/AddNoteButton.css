@@ -13,19 +13,13 @@
 
     display: grid;
     place-content: center;
+
+    z-index: -1;
 }
 .addNoteButton:active{
     background-color: #160e55;
 }
-@media (max-width:1000px) {
-    .addNoteButton{
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        right: 5px;
-    }
-}
-@media (max-width:768px) {
+@media (min-width:768px) {
     .addNoteButton{
         width: 70px;
         height: 70px;
@@ -34,3 +28,12 @@
         bottom: 10px;
     }
 }
+@media (min-width:1000px) {
+    .addNoteButton{
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        right: 5px;
+    }
+}
+
