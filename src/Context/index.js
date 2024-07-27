@@ -10,6 +10,24 @@ function AppContextProvider({children}){
         item:notes,
         saveItem:saveNotes
       } = useLocalStorage("notes")
+
+    const addNewNote = (title,desciption,color)=>{
+      const newNotes = [...notes]
+      let newID = 1;
+      newNotes.forEach(note => {
+        note.id = newID
+        newID++
+      })
+      const newNote = {
+        id:newID,
+        title:title,
+        desciption:desciption,
+        color:color,
+        isCompleted:false
+      }
+      newNotes.push(newNote)
+      saveNotes(newNotes)
+    }
       
       const changeState = (id)=>{
         let newNotes = [...notes]
@@ -37,7 +55,8 @@ function AppContextProvider({children}){
         <AppContext.Provider value={{
             notes,
             changeState,
-            deleteNotes
+            deleteNotes,
+            addNewNote
         }}>
             {children}
         </AppContext.Provider>
