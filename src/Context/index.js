@@ -10,6 +10,8 @@ function AppContextProvider({children}){
         item:notes,
         saveItem:saveNotes
       } = useLocalStorage("notes")
+    
+    const [modalCreateNote,setModalCreateNote] = React.useState(false)
 
     const addNewNote = (title,desciption,color)=>{
       const newNotes = [...notes]
@@ -56,7 +58,9 @@ function AppContextProvider({children}){
             notes,
             changeState,
             deleteNotes,
-            addNewNote
+            addNewNote,
+            modalCreateNote,
+            setModalCreateNote
         }}>
             {children}
         </AppContext.Provider>

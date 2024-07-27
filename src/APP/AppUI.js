@@ -5,11 +5,15 @@ import {Note} from '../Components/Note'
 import { AddNoteButton } from '../Components/AddNoteButton';
 import {AppContext} from '../Context'
 
+import {ModalCreateNote} from '../Components/Modal'
+
 
 function AppUI(){
     const {notes,
         changeState,
-        deleteNotes} = React.useContext(AppContext)
+        deleteNotes,
+        modalCreateNote
+    } = React.useContext(AppContext)
     return(
         <div className="App">
             <Title/>
@@ -27,6 +31,12 @@ function AppUI(){
             )}
             </NotesGrid>
             <AddNoteButton/>
+            {modalCreateNote &&
+                <ModalCreateNote>
+                    Abriendo el Portal
+                </ModalCreateNote>
+            }
+            
         </div>
     )
 }
