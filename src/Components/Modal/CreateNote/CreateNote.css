@@ -1,0 +1,82 @@
+.createNote{
+    height: 340px;
+    background-color: white;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.createNote-info{
+    box-sizing: border-box;
+    padding: 14px;
+    background-color: var(--blue);
+}
+.tittleInput{
+    width: 94%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    
+    background-color: var(--hospital-green);
+}
+.tittleInput:focus{
+    outline: none;
+}
+.tittleInput::placeholder{
+    color: black;
+    
+    font-size: 14px;
+}
+.tittle-description{
+    margin: 12px 5px 5px 12px;
+    font-weight: bold;
+}
+.descriptionInput{
+    height: 200px;
+    margin: 0px 5px;
+    border: 1px solid #c2c2c2;
+    resize: none;
+}
+.descriptionInput:focus{
+    outline: none;
+}
+
+/* Paleta */
+p{
+    margin: 0;
+}
+
+/* Botones */
+.buttons-contaner{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    height: 50px;
+    margin: 4px 15px;
+    border-radius: 10px;
+    width: 100px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.createNote-save{
+    background-color: #1da81d;
+}
+.createNote-cancel{
+    background-color: #aa0e0e;
+}
+.createNote-save:active{
+    background-color: #247624;
+}
+.createNote-cancel:active{
+    background-color: #761111;
+}

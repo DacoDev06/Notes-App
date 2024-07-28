@@ -4,7 +4,7 @@ import {NotesGrid} from '../Components/NotesGrid'
 import {Note} from '../Components/Note'
 import { AddNoteButton } from '../Components/AddNoteButton';
 import {AppContext} from '../Context'
-
+import {CreateNote} from '../Components/Modal/CreateNote'
 import {ModalCreateNote} from '../Components/Modal'
 
 
@@ -33,7 +33,7 @@ function AppUI(){
             <AddNoteButton/>
             {modalCreateNote &&
                 <ModalCreateNote>
-                    Abriendo el Portal
+                    <CreateNote/>
                 </ModalCreateNote>
             }
             
